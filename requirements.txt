@@ -3,3 +3,4 @@ pandas
 requests
 Flask
 gunicorn==19.7.1
+waitress
