@@ -8,6 +8,10 @@ def get_veg_data():
 
 
         df = df[0]
+        df['Wholesale Price']=df['Wholesale Price'].apply(lambda x:x[1:])
+        df['Retail Price']=df['Retail Price'].apply(lambda x:x[1:])
+        df['Shopping Mall']=df['Shopping Mall'].apply(lambda x:x[1:])
+        df.rename(columns={"Wholesale Price":"WholesalePrice","Retail Price":"RetailPrice","Shopping Mall":"ShoppingMall"},inplace=True)
         df.drop("Unnamed: 0",axis=1,inplace=True)
         d = []
         for i in range(len(df)):
